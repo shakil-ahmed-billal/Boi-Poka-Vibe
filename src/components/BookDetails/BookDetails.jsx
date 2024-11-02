@@ -1,4 +1,5 @@
 import { useLoaderData, useParams } from "react-router-dom"
+import { addDataDb } from "../LocalDB/LocalData"
 
 const BookDetails = () => {
     const id = useParams()
@@ -7,7 +8,18 @@ const BookDetails = () => {
 
     const {author, bookName , image, rating ,tags ,category, bookId ,review , yearOfPublishing ,publisher, totalPages} = newBook ;
 
-    console.log(newBook);
+    const handleRead = (id) =>{
+      /**
+         * 1. understand what to store or save: => bookId
+         * 2. Where to store: database
+         * 3. array, list, collection: 
+         * 4. check: if the book is already in the readList. 
+         * 5. if not, then add the book to the list
+         * 6. if yes, do not add the book 
+        */
+
+      addDataDb(id)
+    }
   return (
     <div>
        <div className="grid grid-cols-2 my-5 gap-10">
@@ -23,7 +35,7 @@ const BookDetails = () => {
           <p><span className="text-lg font-bold">Review:</span> {review}</p>
           <div className="flex gap-5 my-3">
                 {
-                    tags.map((tag ,idx) => <p className=" my-3 bg-lime-200 rounded-lg" key={idx}>{tag}</p>)
+                    tags.map((tag ,idx) => <p className="bg-green-100 p-1 px-5 flex items-center text-blue-800 rounded-3xl" key={idx}>{tag}</p>)
                 }
             </div>
           <hr  className="my-5"/>
@@ -34,7 +46,7 @@ const BookDetails = () => {
           <p>Rating: {rating}</p>
           </div>
           <div className="flex gap-10 my-5">
-            <button className="btn bg-transparent border-2 border-white px-7">Read</button>
+            <button onClick={()=>handleRead(bookId)} className="btn bg-transparent border-2 border-white px-7">Read</button>
             <button className="btn  bg-blue-500 border-none">Wishlist</button>
           </div>
         </div>

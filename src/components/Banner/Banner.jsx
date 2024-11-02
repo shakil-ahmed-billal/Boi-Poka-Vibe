@@ -6,7 +6,7 @@ const Banner = () => {
         <div className="flex mx-auto justify-center gap-20 items-center bg-gray-200  rounded-lg  py-40 mb-20">
             <div className="">
             <p className="text-5xl mb-5 text-black  font-bold">Books to freshen up <br /> your bookshelf</p>
-            <button className="btn bg-green-500 text-white">View The List</button>
+            <button className="btn border-none bg-green-500 text-white">View The List</button>
             </div>
             <div className="">
                 <img className='w-72' src={image} alt="" />
