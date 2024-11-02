@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { getStoreData } from "../LocalDB/LocalData";
+import Test from "./Test";
 
 const Meter = () => {
 
@@ -18,7 +19,9 @@ const Meter = () => {
     }, [allBook])
 
   return (
-    <div>Meter</div>
+    <div>
+        <Test BookData={readList}></Test>
+    </div>
   )
 }
 
