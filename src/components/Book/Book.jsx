@@ -7,8 +7,8 @@ const Book = ({book}) => {
     <div>
         <Link to={`/bookDetails/${bookId}`}>
         <div className="border-2 p-5 rounded-3xl">
-            <div className="rounded-lg flex justify-center items-center py-5 bg-gray-400">
-                <img className="h-36" src={image} alt="" />
+            <div className="rounded-lg flex justify-center items-center py-20 bg-gray-400">
+                <img className="h-60" src={image} alt="" />
             </div>
             <div className="flex gap-5">
                 {
